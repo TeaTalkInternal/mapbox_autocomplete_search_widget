@@ -23,7 +23,7 @@ To use this Package, Please get the Access-Token from here https://docs.mapbox.c
 
 The Package has necessarry attributions to Mapbox and can doesnot violate mapbox ![Terms and Conditions](https://www.mapbox.com/legal/tos/).
 
-![](https://github.com/TeaTalkInternal/github_assets/blob/master/gifs/video-to-gif-converter.gif)
+![](https://github.com/TeaTalkInternal/github_assets/blob/master/gifs/place_autocomplete.gif)
 
 - [mapbox_autocomplete_search_widget](#mapbox_autocomplete_search_widget)
   - [How to use it.](#how-to-use-it)
@@ -50,14 +50,12 @@ the usage is very simple, just use the following
     ),
 ```
 
-
 ## parameters
 
 | parameter                  | description                                                                           | default                                                                                                                                                                               |
 | -------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-                                                                                        
-| mapboxApiKey          | Mapbox auth-token has to be passed here                                            | This is a required parameter                                                                                                                                                    |
-| onPlaceSelected                | Function that returns a context and selected Place value  from picker                                                                 | This is a required parameter                                                                                                                                                                            |
+| onPlaceSelected                       | Completion Handler which returns a BuildContext and selected place from picker                                                                  |     (BuildContext context, Place place) {}                                                                                                                                                                              |
+| mapboxApiKey          | Your Mapbox ApiKey (Auth-Token)                                            | ApiKey Value                                                                                                                                                    |
 
 
-[more detail](https://github.com/TeaTalkInternal/favorite_button/tree/master/example/lib)
+[more detail](https://github.com/TeaTalkInternal/mapbox_autocomplete_search_widget/tree/main/lib)
