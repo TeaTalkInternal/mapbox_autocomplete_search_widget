@@ -9,16 +9,34 @@ class SearchAppBarWidget extends StatefulWidget {
     @required Function onValueSubmitted,
     @required TextEditingController placeNameTextController,
     @required String hintText,
+    Color appBarColor = Colors.grey,
+    Color backButtonColor = Colors.white,
+    Color infoButtonColor = Colors.white,
+    Color clearButtonColor = Colors.white,
+    Color cursorColor = Colors.white,
+    Color searchTextColor = Colors.white,
   })  : _searchTextDidChange = searchTextDidChange,
         _onValueSubmitted = onValueSubmitted,
         _hintText = hintText,
         _placeNameTextController = placeNameTextController,
+        _appBarColor = appBarColor,
+        _infoButtonColor = infoButtonColor,
+        _backButtonColor = backButtonColor,
+        _clearButtonColor = clearButtonColor,
+        _cursorColor = cursorColor,
+        _searchTextColor = searchTextColor,
         super(key: key);
 
   final TextEditingController _placeNameTextController;
   final Function _searchTextDidChange;
   final Function _onValueSubmitted;
   final String _hintText;
+  final Color _appBarColor;
+  final Color _infoButtonColor;
+  final Color _backButtonColor;
+  final Color _clearButtonColor;
+  final Color _cursorColor;
+  final Color _searchTextColor;
 
   @override
   _SearchAppBarWidgetState createState() => _SearchAppBarWidgetState();
@@ -35,9 +53,10 @@ class _SearchAppBarWidgetState extends State<SearchAppBarWidget> {
   @override
   Widget build(BuildContext context) {
     final _appbarHeight = MediaQuery.of(context).size.height * 0.12;
+    final _searchTextStyle = TextStyle(color: widget._searchTextColor);
     return Container(
       height: _appbarHeight,
-      color: Colors.grey[200],
+      color: widget._appBarColor,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,19 +66,22 @@ class _SearchAppBarWidgetState extends State<SearchAppBarWidget> {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            color: Colors.grey[600],
+            color: widget._backButtonColor,
           ),
           Flexible(
             child: TextField(
               controller: widget._placeNameTextController,
               autofocus: true,
+              style: _searchTextStyle,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: widget._hintText,
+                labelStyle: _searchTextStyle,
+                hintStyle: _searchTextStyle,
                 suffixIcon: _showClearButton
                     ? IconButton(
                         iconSize: 20.0,
-                        color: Colors.grey[600],
+                        color: widget._clearButtonColor,
                         onPressed: () {
                           setState(() {
                             widget._placeNameTextController.clear();
@@ -70,7 +92,7 @@ class _SearchAppBarWidgetState extends State<SearchAppBarWidget> {
                       )
                     : null,
               ),
-              cursorColor: Colors.grey,
+              cursorColor: widget._cursorColor,
               onChanged: (value) {
                 setState(() {
                   _showClearButton =
@@ -87,7 +109,7 @@ class _SearchAppBarWidgetState extends State<SearchAppBarWidget> {
               //show Mapbox Attributions here
               launch(URLConstants.mapBoxAttributionURL);
             },
-            color: Colors.grey[800],
+            color: widget._infoButtonColor,
           ),
         ],
       ),

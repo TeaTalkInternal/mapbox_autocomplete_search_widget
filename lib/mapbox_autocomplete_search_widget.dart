@@ -29,6 +29,7 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
 
     return Scaffold(
       body: Container(
+        color: Colors.blueGrey[50],
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -68,7 +69,11 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
         } else {
           return Expanded(
             child: ListView(
-              padding: EdgeInsets.only(top: 10.0),
+              padding: EdgeInsets.only(
+                top: 10.0,
+                left: 10.0,
+                right: 10.0,
+              ),
               children: _placesList
                   .map(
                     (_place) => _buildPlaceSearchCardWidget(
@@ -102,15 +107,21 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
   }
 
   Widget _buildPlaceSearchCardWidget({BuildContext context, Place place}) {
-    return ListTile(
-      leading: Icon(Icons.location_pin),
-      title: Text(
-        '${place.placeName}',
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 5.0),
+        child: ListTile(
+          leading: Icon(Icons.location_pin),
+          title: Text(
+            '${place.placeName}',
+          ),
+          onTap: () {
+            onPlaceSelected(context, place);
+            Navigator.of(context).pop();
+          },
+        ),
       ),
-      onTap: () {
-        onPlaceSelected(context, place);
-        Navigator.of(context).pop();
-      },
     );
   }
 
