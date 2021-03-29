@@ -9,3 +9,7 @@ Update README.md file.
 ## [0.0.3] - 29 March 2021.
 
 Added more customization on colors.
+
+## [0.0.4] - 29 March 2021.
+
+Updated Documentation.
