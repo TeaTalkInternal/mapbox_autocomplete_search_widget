@@ -13,3 +13,7 @@ Added more customization on colors.
 ## [0.0.4] - 29 March 2021.
 
 Updated Documentation.
+
+## [0.0.5] - 06 may 2021.
+
+Migrated to Null safety..

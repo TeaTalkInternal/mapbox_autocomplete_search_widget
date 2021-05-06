@@ -23,7 +23,7 @@ final placesListProvider = StateProvider.autoDispose<List<Place>>((ref) {
 });
 //Provider to create network call/ places fetch
 final placesFetchProvider =
-    Provider.autoDispose<Future<List<Place>>>((ref) async {
+    Provider.autoDispose<Future<List<Place>?>>((ref) async {
   final _query = ref.watch(queryProvider).state;
   final _networkServiceProvier = ref.watch(networkServiceProvider(_query));
   final _places = await _networkServiceProvier.fetchMatchingPlaces();

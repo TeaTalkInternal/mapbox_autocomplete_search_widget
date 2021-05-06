@@ -2,6 +2,11 @@
 
 Language: [English](README.md)
 
+- [mapbox_autocomplete_search_widget](#mapbox_autocomplete_search_widget)
+- [How to use it.](#how-to-use-it)
+- [parameters](#parameters)
+
+## mapbox_autocomplete_search_widget
 MapboxAutocompleteSearchWidget is a flutter package that allows you to search for place name in a autocomplete fashion. 
 
 Technical Notes:
@@ -25,9 +30,6 @@ The Package has necessarry attributions to Mapbox and can doesnot violate mapbox
 
 ![](https://github.com/TeaTalkInternal/github_assets/blob/master/gifs/place_autocomplete.gif)
 
-- [mapbox_autocomplete_search_widget](#mapbox_autocomplete_search_widget)
-  - [How to use it.](#how-to-use-it)
-  - [parameters](#parameters)
 
 ##  How to use it.
 
@@ -52,7 +54,7 @@ the usage is very simple, just use the following
 
 ## parameters
 
-| parameter                  | description                                                                           | default                                                                                                                                                                               |
+| parameter                  | description                                                                           | value                                                                                                                                                                               |
 | -------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | onPlaceSelected                       | Completion Handler which returns a BuildContext and selected place from picker                                                                  |     (BuildContext context, Place place) {}                                                                                                                                                                              |
 | mapboxApiKey          | Your Mapbox ApiKey (Auth-Token)                                            | ApiKey Value                                                                                                                                                    |
@@ -64,4 +66,6 @@ the usage is very simple, just use the following
 | searchTextColor          | Color of Text in Search widget                                            | This is a optional parameter                                                                                                                                                    |
 
 
-[more detail](https://github.com/TeaTalkInternal/mapbox_autocomplete_search_widget/tree/main/lib)
+[git repo here](https://github.com/TeaTalkInternal/mapbox_autocomplete_search_widget)
+
+Made with ❤ and dedicated with respect to the Saviour  [Sonu Sood](https://twitter.com/SonuSood)

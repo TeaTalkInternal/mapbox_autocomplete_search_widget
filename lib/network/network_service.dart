@@ -23,12 +23,12 @@ final networkServiceProvider =
 });
 
 class NetworkService {
-  NetworkService({this.dio, this.url});
+  NetworkService({required this.dio, required this.url});
 
   final Dio dio;
   final String url;
 
-  Future<List<Place>> fetchMatchingPlaces() async {
+  Future<List<Place>?> fetchMatchingPlaces() async {
     try {
       final _response = await dio.get(url);
       if (_response.data != null) {

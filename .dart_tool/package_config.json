@@ -39,9 +39,9 @@
     },
     {
       "name": "dio",
-      "rootUri": "file:///Users/kevin.saldanha/Documents/Sotwares/flutter/.pub-cache/hosted/pub.dartlang.org/dio-3.0.10",
+      "rootUri": "file:///Users/kevin.saldanha/Documents/Sotwares/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.4"
+      "languageVersion": "2.12"
     },
     {
       "name": "fake_async",
@@ -57,7 +57,7 @@
     },
     {
       "name": "flutter_riverpod",
-      "rootUri": "file:///Users/kevin.saldanha/Documents/Sotwares/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_riverpod-0.13.1+1",
+      "rootUri": "file:///Users/kevin.saldanha/Documents/Sotwares/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_riverpod-0.14.0+3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -81,9 +81,9 @@
     },
     {
       "name": "http_parser",
-      "rootUri": "file:///Users/kevin.saldanha/Documents/Sotwares/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4",
+      "rootUri": "file:///Users/kevin.saldanha/Documents/Sotwares/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.3"
+      "languageVersion": "2.12"
     },
     {
       "name": "js",
@@ -123,7 +123,7 @@
     },
     {
       "name": "riverpod",
-      "rootUri": "file:///Users/kevin.saldanha/Documents/Sotwares/flutter/.pub-cache/hosted/pub.dartlang.org/riverpod-0.13.1",
+      "rootUri": "file:///Users/kevin.saldanha/Documents/Sotwares/flutter/.pub-cache/hosted/pub.dartlang.org/riverpod-0.14.0+3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -183,7 +183,7 @@
     },
     {
       "name": "url_launcher",
-      "rootUri": "file:///Users/kevin.saldanha/Documents/Sotwares/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.2",
+      "rootUri": "file:///Users/kevin.saldanha/Documents/Sotwares/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -227,10 +227,10 @@
       "name": "mapbox_autocomplete_search_widget",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.7"
+      "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-03-29T02:54:40.205382Z",
+  "generated": "2021-05-06T07:22:16.618454Z",
   "generator": "pub",
   "generatorVersion": "2.12.2"
 }

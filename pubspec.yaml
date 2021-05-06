@@ -1,18 +1,18 @@
 name: mapbox_autocomplete_search_widget
 description: MapboxAutocompleteSearchWidget is a flutter package that allows you to search for place name in a autocomplete fashion.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/TeaTalkInternal/mapbox_autocomplete_search_widget
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  dio: ^3.0.10
-  flutter_riverpod: ^0.13.1+1
-  url_launcher: ^6.0.2
+  dio:
+  flutter_riverpod:
+  url_launcher:
 
 dev_dependencies:
   flutter_test:

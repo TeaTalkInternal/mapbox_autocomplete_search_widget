@@ -5,7 +5,7 @@ final urlConstantsProvider = Provider<URLConstants>((ref) {
 });
 
 class URLConstants {
-  String getUrlForQuery({String query, String kMapBoxKey}) {
+  String getUrlForQuery({required String query, required String kMapBoxKey}) {
     final _pathString = '/geocoding/v5/mapbox.places/$query.json';
     final url = Uri(
         scheme: 'https',

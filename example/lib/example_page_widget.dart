@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mapbox_autocomplete_search_widget/mapbox_autocomplete_search_widget.dart';
 import 'package:mapbox_autocomplete_search_widget/models/place.dart';
 
@@ -8,10 +9,10 @@ class ExamplePageWidget extends StatefulWidget {
 }
 
 class _ExamplePageWidgetState extends State<ExamplePageWidget> {
-  Place _place;
+  Place? _place;
   @override
   Widget build(BuildContext context) {
-    final _buttonTitle = (_place != null) ? _place.placeName : 'Search Place';
+    final _buttonTitle = (_place != null) ? _place!.placeName : 'Search Place';
     final _textStyleColor = (_place != null) ? Colors.grey[900] : Colors.grey;
     return Scaffold(
       appBar: AppBar(
@@ -38,7 +39,7 @@ class _ExamplePageWidgetState extends State<ExamplePageWidget> {
                   )),
               shape: Border(
                   bottom: BorderSide(
-                color: Colors.grey[400],
+                color: Colors.grey[400] ?? Colors.grey,
                 width: 1.0,
               )),
             )
@@ -72,9 +73,8 @@ class _ExamplePageWidgetState extends State<ExamplePageWidget> {
 /* Example using Riverpod */
 /*Uncomment the following code to see the example app implemented using riverpod */
 /*Add flutter_riverpod: as dependency in your app pubspec.yaml file */
-
 /*
-final placeProvider = StateProvider<Place>((ref) => null);
+final placeProvider = StateProvider<Place?>((ref) => null);
 
 class ExamplePageWidget extends StatelessWidget {
   @override
@@ -114,7 +114,7 @@ class ExamplePageWidget extends StatelessWidget {
               ),
               shape: Border(
                   bottom: BorderSide(
-                color: Colors.grey[400],
+                color: Colors.grey[400] ?? Colors.grey,
                 width: 1.0,
               )),
             )
@@ -129,8 +129,7 @@ class ExamplePageWidget extends StatelessWidget {
       MaterialPageRoute(
         builder: (context) => MapboxAutocompleteSearchWidget(
           onPlaceSelected: selectedPlace,
-          mapboxApiKey:
-              'your-mapbox-api-key',
+          mapboxApiKey: 'your-mapbox-api-key',
         ),
         fullscreenDialog: true,
       ),

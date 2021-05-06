@@ -21,11 +21,11 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
   final Color clearButtonColor;
   final Color cursorColor;
   final Color searchTextColor;
-  Timer _timer;
+  Timer? _timer;
 
   MapboxAutocompleteSearchWidget({
-    @required this.onPlaceSelected,
-    @required this.mapboxApiKey,
+    required this.onPlaceSelected,
+    required this.mapboxApiKey,
     this.hintText = 'Search Place',
     this.appBarColor = Colors.grey,
     this.backButtonColor = Colors.white,
@@ -64,7 +64,8 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
     );
   }
 
-  Widget _getWidgetForAppState({BuildContext context, AppState appState}) {
+  Widget _getWidgetForAppState(
+      {required BuildContext context, required AppState appState}) {
     switch (appState) {
       case AppState.loadingState:
         return Container(
@@ -76,7 +77,6 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
             child: CircularProgressIndicator(),
           ),
         );
-        break;
       case AppState.loadedState:
         final _placesListProvider = context.read(placesListProvider);
         final _placesList = _placesListProvider.state;
@@ -103,7 +103,6 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
             ),
           );
         }
-        break;
       case AppState.defaultState:
         return Container(
             padding: EdgeInsets.symmetric(
@@ -118,13 +117,13 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
               width: 120,
               height: 50,
             )));
-        break;
       default:
         return Center(child: Text('Error'));
     }
   }
 
-  Widget _buildPlaceSearchCardWidget({BuildContext context, Place place}) {
+  Widget _buildPlaceSearchCardWidget(
+      {required BuildContext context, required Place place}) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
       child: Padding(
@@ -149,7 +148,7 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
       _queryProvider.state = value;
 
       if (_timer != null) {
-        _timer.cancel();
+        _timer!.cancel();
         _timer = null;
       }
       _timer = Timer(Duration(seconds: 1), () {
@@ -167,7 +166,7 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
 
     context.read(placesFetchProvider).then((_places) {
       final _placesListProvider = context.read(placesListProvider);
-      _placesListProvider.state = _places;
+      _placesListProvider.state = _places ?? [];
 
       _appStateProvier.state = AppState.loadedState;
     });

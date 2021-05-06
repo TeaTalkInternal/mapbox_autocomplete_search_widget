@@ -1,26 +1,26 @@
 import 'package:dio/dio.dart';
 
 class NetworkException implements Exception {
-  String message;
+  String message = '';
   NetworkException.fromDioError(DioError error) {
     switch (error.type) {
-      case DioErrorType.CANCEL:
+      case DioErrorType.cancel:
         message = 'Request to server was cancelled.';
         break;
-      case DioErrorType.CONNECT_TIMEOUT:
+      case DioErrorType.connectTimeout:
         message = 'Connection Timedouy with server.';
         break;
-      case DioErrorType.DEFAULT:
+      case DioErrorType.other:
         message = 'Request to server was cancelled.';
         break;
-      case DioErrorType.RECEIVE_TIMEOUT:
+      case DioErrorType.receiveTimeout:
         message = 'Received timout in connection with server.';
         break;
-      case DioErrorType.SEND_TIMEOUT:
+      case DioErrorType.sendTimeout:
         message = 'Send timeout in connection with server.';
         break;
-      case DioErrorType.RESPONSE:
-        message = _handleError(error.response.statusCode);
+      case DioErrorType.response:
+        message = _handleError(error.response?.statusCode);
         break;
 
       default:
@@ -29,17 +29,14 @@ class NetworkException implements Exception {
     }
   }
 
-  String _handleError(int statusCode) {
+  String _handleError(int? statusCode) {
     switch (statusCode) {
       case 400:
         return 'Bad request.';
-        break;
       case 404:
         return 'Requested resource was not found.';
-        break;
       case 500:
         return 'Internal server error.';
-        break;
       default:
         return 'Oops something went wrong';
     }

@@ -11,21 +11,21 @@ class Place {
   final double longitude;
 
   Place({
-    @required this.id,
-    @required this.type,
-    @required this.text,
-    @required this.placeName,
-    @required this.latitude,
-    @required this.longitude,
+    required this.id,
+    required this.type,
+    required this.text,
+    required this.placeName,
+    required this.latitude,
+    required this.longitude,
   });
 
   Place copyWith({
-    String id,
-    String type,
-    String text,
-    String placeName,
-    double latitude,
-    double longitude,
+    String? id,
+    String? type,
+    String? text,
+    String? placeName,
+    double? latitude,
+    double? longitude,
   }) {
     return Place(
       id: id ?? this.id,
