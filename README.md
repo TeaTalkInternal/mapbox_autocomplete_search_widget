@@ -64,7 +64,7 @@ the usage is very simple, just use the following
 | clearButtonColor          | Color of clear button in Search widget                                            | This is a optional parameter                                                                                                                                                    |
 | cursorColor          | Color of cursor in Search widget                                            | This is a optional parameter                                                                                                                                                    |
 | searchTextColor          | Color of Text in Search widget                                            | This is a optional parameter                                                                                                                                                    |
-
+| searchBackgroundColor          | Color of Search area background                                            | This is a optional parameter                                                                                                                                                    |
 
 [git repo here](https://github.com/TeaTalkInternal/mapbox_autocomplete_search_widget)
 

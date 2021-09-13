@@ -21,18 +21,20 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
   final Color clearButtonColor;
   final Color cursorColor;
   final Color searchTextColor;
+  final Color searchBackgroundColor;
   Timer? _timer;
 
   MapboxAutocompleteSearchWidget({
     required this.onPlaceSelected,
     required this.mapboxApiKey,
     this.hintText = 'Search Place',
-    this.appBarColor = Colors.grey,
+    this.appBarColor = Colors.black45,
     this.backButtonColor = Colors.white,
     this.infoButtonColor = Colors.white,
     this.clearButtonColor = Colors.white,
     this.cursorColor = Colors.white,
     this.searchTextColor = Colors.white,
+    this.searchBackgroundColor = Colors.black12,
   });
 
   @override
@@ -41,7 +43,7 @@ class MapboxAutocompleteSearchWidget extends ConsumerWidget {
 
     return Scaffold(
       body: Container(
-        color: Colors.blueGrey[50],
+        color: searchBackgroundColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
